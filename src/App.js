@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'antd';
 import logo from './logo.svg';
 import './App.css';
 
@@ -22,6 +23,7 @@ and save to reload.
         >
           Learn React
         </a>
+        <Button type="primary">Primary</Button>
       </header>
     </div>
   );
