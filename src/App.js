@@ -1,31 +1,24 @@
 import React from 'react';
-import { Button } from 'antd';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from 'antd';
+import { FirebaseContextProvider } from './firebase';
+import Home from './pages/Home';
+import Header from './layout/Header';
+
+const { Content, Footer } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button type="primary">Primary</Button>
-      </header>
-    </div>
+    <FirebaseContextProvider>
+      <Layout style={{ minHeight: '100vh' }}>
+        <Header />
+        <Content style={{ padding: '0 50px', marginTop: 64 }}>
+          <Home />
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>
+      Ant Design ©2018 Created by Ant UED
+        </Footer>
+      </Layout>
+    </FirebaseContextProvider>
   );
 }
 
